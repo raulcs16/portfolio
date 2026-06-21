@@ -25,9 +25,12 @@ export default function Home() {
     <main className="w-full min-h-screen text-neutral-200 selection:bg-teal-500 selection:text-black">
       {/* HEADER SECTION (Added z-50 to ensure it masks all sliding components) */}
       <header className="sticky top-0 z-50 w-full max-w-4xl h-16 mx-auto flex items-center justify-between px-6 border-b border-neutral-800 backdrop-blur-md">
-        <span className="font-mono font-bold tracking-wider text-teal-400">
-          RR.DEV
-        </span>
+        <Image
+          src={"/android-chrome-512x512.png"}
+          alt={"icon"}
+          width={48}
+          height={48}
+        ></Image>
         <a
           href="mailto:raul@example.com"
           className="text-sm px-4 py-1.5 rounded-full border border-neutral-700 hover:bg-neutral-800 transition-colors"
@@ -140,7 +143,6 @@ export default function Home() {
       {/* FOOTER NOTATION */}
       <footer className="w-full max-w-3xl mx-auto px-6 pt-12 pb-16 text-center border-t border-neutral-900 text-xs text-neutral-600   backdrop-blur-md">
         &copy; {new Date().getFullYear()} Raul Ramirez. All rights reserved.
-        Built cleanly using Next.js & Tailwind CSS.
       </footer>
       <Effects></Effects>
     </main>
