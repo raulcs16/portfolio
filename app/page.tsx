@@ -1,3 +1,4 @@
+import Effects from "@/src/Effects";
 import Image from "next/image";
 
 // Mock data structures for a clean, mapping lifecycle loop
@@ -21,9 +22,9 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen bg-neutral-950 text-neutral-200 selection:bg-teal-500 selection:text-black">
+    <main className="w-full min-h-screen text-neutral-200 selection:bg-teal-500 selection:text-black">
       {/* HEADER SECTION (Added z-50 to ensure it masks all sliding components) */}
-      <header className="sticky top-0 z-50 w-full max-w-4xl h-16 mx-auto flex items-center justify-between px-6 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full max-w-4xl h-16 mx-auto flex items-center justify-between px-6 border-b border-neutral-800 backdrop-blur-md">
         <span className="font-mono font-bold tracking-wider text-teal-400">
           RR.DEV
         </span>
@@ -38,7 +39,7 @@ export default function Home() {
       {/* BODY CONTEXT OVERVIEW */}
       <div className="w-full max-w-3xl mx-auto px-6 py-12 flex flex-col gap-12">
         {/* HERO / BIO SECTION */}
-        <section className="w-full py-6 border border-neutral-800 bg-neutral-900/40 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6">
+        <section className="w-full py-6 border backdrop-blur-md  border-neutral-800  rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6">
           <div className="relative bg-neutral-800 p-2 rounded-full border border-neutral-700">
             <Image
               className="rounded-full bg-neutral-900 object-contain p-1"
@@ -70,7 +71,7 @@ export default function Home() {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className="p-5 border border-neutral-800 bg-neutral-900/20 hover:border-neutral-700 rounded-xl transition-all group flex flex-col gap-2"
+                className="p-5 border border-neutral-800 hover:border-neutral-700 rounded-xl transition-all group flex flex-col gap-2 backdrop-blur-md "
               >
                 <h3 className="font-semibold text-white group-hover:text-teal-400 transition-colors">
                   {proj.title}
@@ -92,7 +93,7 @@ export default function Home() {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="px-4 py-2 text-xs font-medium border border-neutral-800 bg-neutral-900/50 rounded-lg text-neutral-300"
+                className="px-4 py-2 text-xs font-medium border border-slate-900/95 bg-neutral-900/50 rounded-lg text-neutral-300 backdrop-blur-md"
               >
                 {cert}
               </div>
@@ -110,7 +111,7 @@ export default function Home() {
               {frontends.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1.5 text-xs border border-neutral-800 rounded-md bg-neutral-900/30"
+                  className="px-3 py-1.5 text-xs border border-slate-900/95 rounded-md bg-neutral-900/30 backdrop-blur-md"
                 >
                   {tech}
                 </span>
@@ -126,7 +127,7 @@ export default function Home() {
               {backends.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1.5 text-xs border border-neutral-800 rounded-md bg-neutral-900/30"
+                  className="px-3 py-1.5 text-xs border border-slate-900/95 rounded-md bg-neutral-900/30 backdrop-blur-md"
                 >
                   {tech}
                 </span>
@@ -137,10 +138,11 @@ export default function Home() {
       </div>
 
       {/* FOOTER NOTATION */}
-      <footer className="w-full max-w-3xl mx-auto px-6 pt-12 pb-16 text-center border-t border-neutral-900 text-xs text-neutral-600">
+      <footer className="w-full max-w-3xl mx-auto px-6 pt-12 pb-16 text-center border-t border-neutral-900 text-xs text-neutral-600   backdrop-blur-md">
         &copy; {new Date().getFullYear()} Raul Ramirez. All rights reserved.
         Built cleanly using Next.js & Tailwind CSS.
       </footer>
+      <Effects></Effects>
     </main>
   );
 }
